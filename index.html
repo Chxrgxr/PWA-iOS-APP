@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChxrHub</title>
+    <link rel="stylesheet" href="styles.css">
+  
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="ChxrHub">
+</head>
+<body>
+    <!-- Blur background -->
+    <div class="blur"></div>
+
+    <!-- Popup -->
+    <div class="popup">
+        <div class="popup-content">
+            <p>Add This App To HomeScreen for a better experience!</p>
+            <p>Instructions:</p>
+            <ol>
+                <li>Tap the <strong> <img src="https://www.lunight.rf.gd/PWA-iOS-APP/IMG_1729.png" style="width: 15px;"> Share </img> </strong> icon.</li>
+                <li>Scroll down and select <strong>Add to Home Screen</strong>.</li>
+                <li>Done!</li>
+            </ol>
+            <button class="skip-btn" onclick="closePopup()">Skip/Done</button>
+        </div>
+    </div>
+
+    <!-- Your site's main content -->
+    <main class="site-content hidden">
+      
+        <h1>ChxrHub</h1>
+      
+      
+      
+      
+    </main>
+
+    <script src="script.js"></script>
+
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+
+
+</body>
+</html>
